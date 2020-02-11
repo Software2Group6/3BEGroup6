@@ -1,6 +1,4 @@
-PROJECT : 
-
-                        ------------- Do/write everything in ENGLISH  --------------------
+                      ------------- Do/write everything in ENGLISH  --------------------
                                           
 
 - Software development (C#) : Abbas, Vincent
