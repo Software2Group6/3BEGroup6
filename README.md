@@ -1,4 +1,6 @@
 PROJECT : 
+                        ------------- Do/write everything in ENGLISH ! --------------------
+                        
 
 - Software development (C#) : Abbas, Vincent
 
@@ -15,5 +17,4 @@ PROJECT :
 - Requirements : Nabil, Zak
 
 
-                        ------------- Do/write everything in ENGLISH ! --------------------
 
