@@ -1,6 +1,7 @@
 PROJECT : 
-                        ------------- Do/write everything in ENGLISH ! --------------------
-                        
+
+                        ------------- Do/write everything in ENGLISH  --------------------
+                                          
 
 - Software development (C#) : Abbas, Vincent
 
@@ -13,8 +14,8 @@ PROJECT :
 - Relationship diagram (DB) => Nabil 
 - Interface  => Zak, Nabil 
 
-- Needs : Nabil, Zak
-- Requirements : Nabil, Zak
+- Needs =>  Nabil, Zak
+- Requirements =>  Nabil, Zak
 
 
 
