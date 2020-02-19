@@ -1,11 +1,11 @@
 The system must be able to calculate the total height of the finished structure
-The system must limit the addition of racks to 7 racks
-The system must associate a rack with 4 brackets of which the user can choose the color
+The system must limit the addition of boxes to 7 boxes
+The system must associate a box with 4 brackets of which the user can choose the color
 The system must allow the user to choose a color for each of the 4 brackets
-The system must allow the user to choose a color of each rack's panels (only 1 color of panel per rack)
-The system must ask whether or not to put a door to see if the rack's size is limited by the doors width
+The system must allow the user to choose a color of each box's panels (only 1 color of panel per box)
+The system must ask whether or not to put a door to see if the box's size is limited by the doors width
 The system must allow the user to choose a color for the door which is independent
-The system must be able to check the racks compatibility
+The system must be able to check the boxes compatibility
 The system must allow the user to encode the order in the store
 The system must be able to display each order's summary
 The system must be able to check the availability in the shop's stock
