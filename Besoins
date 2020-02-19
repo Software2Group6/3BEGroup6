@@ -9,7 +9,6 @@ Le système doit pouvoir vérifier la compatibilité des blocs
 Le système doit pouvoir autorisé  l'encodage de la commande en magasin 
 Le système doit pouvoir afficher un récapitulatif de la commande
 Le système doit pouvoir vérifier la disponibilité en stock
-Le système doit pouvoir
 Le système doit pouvoir faire une impression de la facture reprenant la composition de l'armoire
 Le système doit permettre de rajouter des éléments disponible grâce a une nouvelle commande 
 Le système doit permettre de supprimer les éléments de la BD lorsqu'ils ont été utilisé/perdu/cassé
