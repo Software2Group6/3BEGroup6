@@ -1,0 +1,16 @@
+The system must be able to calculate the total height of the finished structure
+The system must limit the addition of racks to 7 racks
+The system must associate a rack with 4 brackets of which the user can choose the color
+The system must allow the user to choose a color for each of the 4 brackets
+The system must allow the user to choose a color of each rack's panels (only 1 color of panel per rack)
+The system must ask whether or not to put a door to see if the rack's size is limited by the doors width
+The system must allow the user to choose a color for the door which is independent
+The system must be able to check the racks compatibility
+The system must allow the user to encode the order in the store
+The system must be able to display each order's summary
+The system must be able to check the availability in the shop's stock
+The system must be able to print the invoice showing the composition of the shelf
+The system must allow the user to add available elements by creating a new order
+The system must make it possible to delete the elements of the DB when they have been used / lost / broken
+The system must be able to list the parts required for the order
+The system must be able to find an order based on the name of the customer
