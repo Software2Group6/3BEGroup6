@@ -1,0 +1,16 @@
+Le système doit pouvoir calculer la hauteur totale de la structure finie 
+Le système doit bloquer l'ajout de casier à 7 casiers maximum
+Le système doit associer un casier à 4 cornière dont on choisit la couleur
+Le système doit permettre le choix d'une couleur pour les 4 cornières
+Le système doit mettre le choix de la couleur des panneaux ( 1 seul couleur de panneau par casier)
+Le système doit proposer si on met une porte ou pas pour voir si on est limité par la largeur de la porte 
+Le système doit pouvoir choisir la couleur de la porte qui est indépendante 
+Le système doit pouvoir vérifier la compatibilité des blocs
+Le système doit pouvoir autoriser l'encodage de la commande en magasin 
+Le système doit pouvoir afficher un récapitulatif de la commande
+Le système doit pouvoir vérifier la disponibilité en stock
+Le système doit pouvoir faire une impression de la facture reprenant la composition de l'armoire
+Le système doit permettre de rajouter des éléments disponible grâce à une nouvelle commande 
+Le système doit permettre de supprimer les éléments de la BD lorsqu'ils ont été utilisés/perdus/cassés
+Le système doit pouvoir détailler les pièces nécessaires pour la commande 
+Le système doit pouvoir retrouver une commande sur base du nom du client
