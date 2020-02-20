@@ -1,7 +1,7 @@
                       ------------- Do/write everything in ENGLISH  --------------------
                                           
 
-- Software development (C#) : Abbas, Vincent
+- Software development (C#) : Abbas, Vincent, Zak, Nabil 
 
 - Class diagram => Abbas
 - Activity diagram => Zak
