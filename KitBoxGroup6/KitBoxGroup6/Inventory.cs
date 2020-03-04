@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-public class Box
+public class Inventory
 {
-	private List<Locker> lockerList;
+	private List<Part> partList;
 
-	public Box(List<Locker> lockerList)
+
+	public Inventory(List<Part> partList)
 	{
-		this.lockerList = lockerList;
+		this.partList = partList;
 	}
+
 }

@@ -16,5 +16,17 @@ namespace KitBoxGroup6
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Box kitBox = new Box(new List<Locker>());
+            //MessageBox.Show("kitBox created !");
+            
+        }
     }
 }
