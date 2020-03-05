@@ -16,6 +16,7 @@ namespace KitBoxGroup6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //DataBase.ReadDB();
             Application.Run(new Form1());
         }
     }

@@ -16,48 +16,43 @@ namespace KitBoxGroup6
         public Form1()
         {
             InitializeComponent();
+            panel1.Visible = false;
+            comboBox1.Items.Add(32);
+            comboBox1.Items.Add(42);
+            comboBox1.Items.Add(52);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                OleDbConnection connection;
-                connection = new OleDbConnection();
-                connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=..\..\..\..\Kitbox.accdb;Persist Security Info=False;";
-                connection.Open();
-                CheckConnection.Text = "Connection established";
-                string queryString = "SELECT * FROM Parts ";
-                // declare oleDb command object 
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = connection;
-                cmd.CommandText = queryString;
-                // declare data reader object 
-                OleDbDataReader dbReader = null;
-                dbReader = cmd.ExecuteReader();
-
-                // Show first row 
-                dbReader.Read();
-                int i;
-                for (i = 0; i < 17; i++)
-                {
-                    textBox1.Text += dbReader[i].ToString();
-                }
-
-                dbReader.Close();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Connexion to Database failed" + ex.ToString());
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Box kitBox = new Box(new List<Locker>());
             //MessageBox.Show("kitBox created !");
-            
+            panel1.Visible = true;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
