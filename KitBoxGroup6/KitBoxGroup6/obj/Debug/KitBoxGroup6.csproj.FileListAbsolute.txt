@@ -1,9 +1,0 @@
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\bin\Debug\KitBoxGroup6.exe.config
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\bin\Debug\KitBoxGroup6.exe
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\bin\Debug\KitBoxGroup6.pdb
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\obj\Debug\KitBoxGroup6.csprojAssemblyReference.cache
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\obj\Debug\KitBoxGroup6.Form1.resources
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\obj\Debug\KitBoxGroup6.Properties.Resources.resources
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\obj\Debug\KitBoxGroup6.csproj.GenerateResource.cache
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\obj\Debug\KitBoxGroup6.exe
-C:\Users\abbas\Documents\GitHub\3BEGroup6\KitBoxGroup6\KitBoxGroup6\obj\Debug\KitBoxGroup6.pdb
