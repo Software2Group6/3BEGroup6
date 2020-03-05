@@ -1,4 +1,5 @@
 
 *.cache
-KitBoxGroup6/.vs/KitBoxGroup6/v16
+KitBoxGroup6/.vs
+Database/.vs
 *.ide

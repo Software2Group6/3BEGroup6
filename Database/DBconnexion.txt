@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
                 OleDbConnection connection;
                 connection = new OleDbConnection();
                 connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\abbas\Documents\GitHub\3BEGroup6\Kitbox.accdb;
-Persist Security Info=False;";
+				Persist Security Info=False;";
                 connection.Open();
                 CheckConnection.Text = "Connection established";
                 //string queryString = "SELECT * FROM ID ";
