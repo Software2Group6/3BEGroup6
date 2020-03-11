@@ -17,9 +17,11 @@ namespace KitBoxGroup6
         {
             InitializeComponent();
             panel1.Visible = false;
-            comboBox1.Items.Add(32);
+            comboBox1.Items.Add(36);
+            comboBox1.Items.Add(46);
+            comboBox1.Items.Add(56);
             comboBox2.Items.Add(42);
-            comboBox3.Items.Add("red");
+            comboBox3.Items.Add("Red");
             
             comboBox4.Items.Add(52);
             comboBox6.Items.Add("Green");
@@ -41,6 +43,7 @@ namespace KitBoxGroup6
 
         }
         int A = 1;
+        double boxHeight = 0;
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -51,6 +54,7 @@ namespace KitBoxGroup6
             double[] dimension = {height, width, depth};
             bool doors = checkBox1.Checked;
             string cups = "Yes";
+            boxHeight += height;
 
             if (doors==false || comboBox6.SelectedItem == "Verre")
             {
@@ -58,6 +62,11 @@ namespace KitBoxGroup6
             }
 
             panel2.Visible = true;
+            tableLayoutPanel1.Visible = true;
+            label10.Visible = true;
+            textBox1.Text =  boxHeight.ToString();
+            textBox2.Text = comboBox1.SelectedItem.ToString();
+            textBox3.Text = comboBox2.SelectedItem.ToString();
 
             DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
             row.Cells[0].Value = A;
@@ -173,5 +182,14 @@ namespace KitBoxGroup6
 
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
