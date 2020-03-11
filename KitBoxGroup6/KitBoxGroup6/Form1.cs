@@ -20,8 +20,10 @@ namespace KitBoxGroup6
             comboBox1.Items.Add(32);
             comboBox2.Items.Add(42);
             comboBox3.Items.Add("red");
+            
             comboBox4.Items.Add(52);
             comboBox6.Items.Add("Green");
+            comboBox6.Items.Add("Verre");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,41 +37,58 @@ namespace KitBoxGroup6
             //MessageBox.Show("kitBox created !");
             panel1.Visible = true;
             button4.Visible = false;
+            button1.Visible = false;
 
         }
         int A = 1;
         private void button2_Click(object sender, EventArgs e)
         {
+            
             string color = comboBox3.SelectedText;
             double height = Convert.ToDouble(comboBox1.SelectedItem);
             double width = Convert.ToDouble(comboBox2.SelectedItem);
             double depth = Convert.ToDouble(comboBox4.SelectedItem);
             double[] dimension = {height, width, depth};
             bool doors = checkBox1.Checked;
+            string cups = "Yes";
+
+            if (doors==false || comboBox6.SelectedItem == "Verre")
+            {
+                cups = "None";
+            }
 
             panel2.Visible = true;
 
-            CreateTextBoxes();
-
+            DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+            row.Cells[0].Value = A;
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                row.Cells[1].Value = comboBox6.SelectedItem;
+            }
+            else
+            {
+                row.Cells[1].Value = "None";
+            }
+            row.Cells[2].Value = cups;
+            row.Cells[3].Value = comboBox3.SelectedItem;
+            row.Cells[4].Value = comboBox1.SelectedItem;
+            dataGridView1.Rows.Add(row);
 
             Inventory inventory = new Inventory(new List<Part>());  
             Locker Locker = new Locker(dimension, color, inventory);
 
-            //listBox1.Items.Add("Color : " + comboBox3.SelectedText);
-            //listBox1.Items.Add("Height  : " + comboBox1.SelectedText);
-            //listBox1.Items.Add("Width : " + comboBox2.SelectedText);
-            //listBox1.Items.Add("Depth : " + comboBox4.SelectedText);
+            A = A + 1;
 
             if (A > 7)
             {
                 button2.Visible = false;
             }
 
-
+            
 
         }
 
-        private void CreateTextBoxes()
+        private void CreateTextBoxesP2()
         {
             TextBox tb = null;            
             tb = new TextBox();
@@ -89,7 +108,9 @@ namespace KitBoxGroup6
             A = A + 1;            
         }
 
-  
+
+
+
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -125,5 +146,32 @@ namespace KitBoxGroup6
                 comboBox6.Visible = true;
             }
         }
+
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
     }
 }

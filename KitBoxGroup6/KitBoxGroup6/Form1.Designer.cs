@@ -46,7 +46,15 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Locker = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cups = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Height = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -78,15 +86,15 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(15, 15);
+            this.panel1.Location = new System.Drawing.Point(386, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1547, 378);
+            this.panel1.Size = new System.Drawing.Size(1547, 284);
             this.panel1.TabIndex = 1;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(462, 330);
+            this.button3.Location = new System.Drawing.Point(856, 198);
             this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(244, 42);
@@ -220,11 +228,13 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.AutoSize = true;
-            this.panel2.Location = new System.Drawing.Point(15, 414);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(3, 291);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(851, 338);
+            this.panel2.Size = new System.Drawing.Size(1849, 870);
             this.panel2.TabIndex = 3;
+            this.panel2.Visible = false;
             // 
             // checkBox1
             // 
@@ -261,6 +271,60 @@
             this.comboBox6.TabIndex = 14;
             this.comboBox6.Visible = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MidnightBlue;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Locker,
+            this.Column2,
+            this.Cups,
+            this.Color,
+            this.Height});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.Location = new System.Drawing.Point(43, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 72;
+            this.dataGridView1.RowTemplate.Height = 31;
+            this.dataGridView1.Size = new System.Drawing.Size(1803, 518);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Locker
+            // 
+            this.Locker.HeaderText = "Locker";
+            this.Locker.MinimumWidth = 9;
+            this.Locker.Name = "Locker";
+            this.Locker.Width = 175;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Door";
+            this.Column2.MinimumWidth = 9;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 175;
+            // 
+            // Cups
+            // 
+            this.Cups.HeaderText = "Cups";
+            this.Cups.MinimumWidth = 9;
+            this.Cups.Name = "Cups";
+            this.Cups.Width = 175;
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.MinimumWidth = 9;
+            this.Color.Name = "Color";
+            this.Color.Width = 175;
+            // 
+            // Height
+            // 
+            this.Height.HeaderText = "Height";
+            this.Height.MinimumWidth = 9;
+            this.Height.Name = "Height";
+            this.Height.Width = 175;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -277,6 +341,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +368,12 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Locker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cups;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Height;
     }
 }
 
