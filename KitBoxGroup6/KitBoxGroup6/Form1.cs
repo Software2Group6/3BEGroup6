@@ -38,64 +38,13 @@ namespace KitBoxGroup6
             Box kitBox = new Box(new List<Locker>());
             //MessageBox.Show("kitBox created !");
             panel1.Visible = true;
-            button4.Visible = false;
+            button3.Visible = false;
             button1.Visible = false;
 
         }
         int A = 1;
         double boxHeight = 0;
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            string color = comboBox3.SelectedText;
-            double height = Convert.ToDouble(comboBox1.SelectedItem);
-            double width = Convert.ToDouble(comboBox2.SelectedItem);
-            double depth = Convert.ToDouble(comboBox4.SelectedItem);
-            double[] dimension = {height, width, depth};
-            bool doors = checkBox1.Checked;
-            string cups = "Yes";
-            boxHeight += height;
 
-            if (doors==false || comboBox6.SelectedItem == "Verre")
-            {
-                cups = "None";
-            }
-
-            panel2.Visible = true;
-            tableLayoutPanel1.Visible = true;
-            label10.Visible = true;
-            textBox1.Text =  boxHeight.ToString();
-            textBox2.Text = comboBox1.SelectedItem.ToString();
-            textBox3.Text = comboBox2.SelectedItem.ToString();
-
-            DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-            row.Cells[0].Value = A;
-            if (checkBox1.CheckState == CheckState.Checked)
-            {
-                row.Cells[1].Value = comboBox6.SelectedItem;
-            }
-            else
-            {
-                row.Cells[1].Value = "None";
-            }
-            row.Cells[2].Value = cups;
-            row.Cells[3].Value = comboBox3.SelectedItem;
-            row.Cells[4].Value = comboBox1.SelectedItem;
-            dataGridView1.Rows.Add(row);
-
-            Inventory inventory = new Inventory(new List<Part>());  
-            Locker Locker = new Locker(dimension, color, inventory);
-
-            A = A + 1;
-
-            if (A > 7)
-            {
-                button2.Visible = false;
-            }
-
-            
-
-        }
 
         private void CreateTextBoxesP2()
         {
@@ -189,6 +138,62 @@ namespace KitBoxGroup6
 
         private void label10_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label6.Visible = false;
+            label5.Visible = false;
+            comboBox2.Visible = false;
+            comboBox4.Visible = false;
+            string color = comboBox3.SelectedText;
+            double height = Convert.ToDouble(comboBox1.SelectedItem);
+            double width = Convert.ToDouble(comboBox2.SelectedItem);
+            double depth = Convert.ToDouble(comboBox4.SelectedItem);
+            double[] dimension = { height, width, depth };
+            bool doors = checkBox1.Checked;
+            string cups = "Yes";
+            boxHeight += height;
+
+            if (doors == false || comboBox6.SelectedItem == "Verre")
+            {
+                cups = "None";
+            }
+
+            panel2.Visible = true;
+            tableLayoutPanel1.Visible = true;
+            label10.Visible = true;
+            textBox1.Text = boxHeight.ToString();
+            textBox2.Text = comboBox1.SelectedItem.ToString();
+            textBox3.Text = comboBox2.SelectedItem.ToString();
+
+            DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+            row.Cells[0].Value = A;
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                row.Cells[1].Value = comboBox6.SelectedItem;
+            }
+            else
+            {
+                row.Cells[1].Value = "None";
+            }
+            row.Cells[2].Value = cups;
+            row.Cells[3].Value = comboBox3.SelectedItem;
+            row.Cells[4].Value = comboBox1.SelectedItem;
+            dataGridView1.Rows.Add(row);
+
+            Inventory inventory = new Inventory(new List<Part>());
+            Locker Locker = new Locker(dimension, color, inventory);
+
+            A = A + 1;
+
+            if (A > 7)
+            {
+                button4.Visible = false;
+            }
+
+
 
         }
     }
