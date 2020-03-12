@@ -2,11 +2,12 @@
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using System.Data.OleDb;
 
 public class DataBase
 {
-    public static void ReadDB()  //Method to read the DB
+    public static DataTable ReadDB(int choice)  //Method to read the DB
     {
         try
         {
@@ -14,8 +15,30 @@ public class DataBase
             connection = new OleDbConnection();
             connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=..\..\..\..\Kitbox.accdb;Persist Security Info=False;";
             connection.Open();
+            string queryString;
             //CheckConnection.Text = "Connection established";
-            string queryString = "SELECT * FROM Parts ";
+            switch (choice)
+            {
+                case 1:
+                    queryString = "SELECT Height FROM Parts WHERE Ref='Tasseau' ";
+                    break;
+                case 2:
+                    queryString = "SELECT Width FROM Parts WHERE Ref='Traverse Ar' ";
+                    break;
+                case 3:
+                    queryString = "SELECT Depth FROM Parts WHERE Ref='Traverse GD' ";
+                    break;
+                case 4:
+                    queryString = "SELECT Color FROM Parts WHERE Ref='Panneau GD' ";
+                    break;
+                case 5:
+                    queryString = "SELECT Color FROM Parts WHERE Ref='Porte' ";
+                    break;
+                default:
+                    queryString = null;
+                    break;
+            }
+            //string queryString = "SELECT * FROM Parts ";
             // declare oleDb command object 
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = connection;
@@ -23,24 +46,28 @@ public class DataBase
             // declare data reader object 
             OleDbDataReader dbReader = null;
             dbReader = cmd.ExecuteReader();
+            DataTable rep = new DataTable();
 
-
-            // Show first row 
-            dbReader.Read();
-            int i;
-            for (i = 0; i < 17; i++)
-            {
-                //textBox1.Text += dbReader[i].ToString();
-            }
+            rep = GetData(dbReader);
 
             dbReader.Close();
             connection.Close();
+            return rep;
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Connexion to Database failed" + ex.ToString());
+            MessageBox.Show("Connexion to Database failed :" + ex.ToString());
+            return null;
         }
     }
 
+    public static DataTable GetData(OleDbDataReader dbReader)
+    {
+
+        DataTable dtDim = new DataTable();
+        dtDim.Load(dbReader);
+        return dtDim;
+    }
+
 }
-	            
+

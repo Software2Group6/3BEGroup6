@@ -17,15 +17,47 @@ namespace KitBoxGroup6
         {
             InitializeComponent();
             panel1.Visible = false;
-            comboBox1.Items.Add(36);
-            comboBox1.Items.Add(46);
-            comboBox1.Items.Add(56);
-            comboBox2.Items.Add(42);
-            comboBox3.Items.Add("Red");
-            
-            comboBox4.Items.Add(52);
-            comboBox6.Items.Add("Green");
-            comboBox6.Items.Add("Verre");
+
+            DataTable dtDim = new DataTable();
+            DataView view;
+
+            dtDim = DataBase.ReadDB(1);
+            //dtDim = dtDim.AsEnumerable().Distinct().CopyToDataTable();
+            view = new DataView(dtDim);
+            view.Sort = "Height ASC";
+            DataTable distinctDTHeight = view.ToTable(true, "Height");
+            dtDim = DataBase.ReadDB(2);
+            view = new DataView(dtDim);
+            view.Sort = "Width ASC";
+            DataTable distinctDTWidth = view.ToTable(true, "Width");
+            dtDim = DataBase.ReadDB(3);
+            view = new DataView(dtDim);
+            view.Sort = "Depth ASC";
+            DataTable distinctDTDepth = view.ToTable(true, "Depth");
+            dtDim = DataBase.ReadDB(4);
+            view = new DataView(dtDim);
+            view.Sort = "Color ASC";
+            DataTable distinctDTBoxColor = view.ToTable(true, "Color") ;
+            dtDim = DataBase.ReadDB(5);
+            view = new DataView(dtDim);
+            view.Sort = "Color ASC";
+            DataTable distinctDTDoorColor = view.ToTable(true, "Color");
+
+            comboBox1.DisplayMember = "Height";
+            comboBox1.ValueMember = "Height";
+            comboBox1.DataSource = distinctDTHeight;
+            comboBox2.DisplayMember = "Width";
+            comboBox2.ValueMember = "Width";
+            comboBox2.DataSource = distinctDTWidth;
+            comboBox4.DisplayMember = "Depth";
+            comboBox4.ValueMember = "Depth";
+            comboBox4.DataSource = distinctDTDepth;
+            comboBox3.DisplayMember = "Color";
+            comboBox3.ValueMember = "Color";
+            comboBox3.DataSource = distinctDTBoxColor;
+            comboBox6.DisplayMember = "Color";
+            comboBox6.ValueMember = "Color";
+            comboBox6.DataSource = distinctDTDoorColor;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -148,13 +180,13 @@ namespace KitBoxGroup6
             comboBox2.Visible = false;
             comboBox4.Visible = false;
             string color = comboBox3.SelectedText;
-            double height = Convert.ToDouble(comboBox1.SelectedItem);
-            double width = Convert.ToDouble(comboBox2.SelectedItem);
-            double depth = Convert.ToDouble(comboBox4.SelectedItem);
-            double[] dimension = { height, width, depth };
+            string height = comboBox1.SelectedItem.ToString();
+            string width = comboBox2.SelectedItem.ToString();
+            string depth = comboBox4.SelectedItem.ToString();
+            string[] dimension = { height, width, depth };
             bool doors = checkBox1.Checked;
             string cups = "Yes";
-            boxHeight += height;
+            //boxHeight += height;
 
             if (doors == false || comboBox6.SelectedItem == "Verre")
             {
@@ -184,7 +216,7 @@ namespace KitBoxGroup6
             dataGridView1.Rows.Add(row);
 
             Inventory inventory = new Inventory(new List<Part>());
-            Locker Locker = new Locker(dimension, color, inventory);
+            //Locker Locker = new Locker(dimension, color, inventory);
 
             A = A + 1;
 
