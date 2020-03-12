@@ -22,23 +22,27 @@ namespace KitBoxGroup6
             DataView view;
 
             dtDim = DataBase.ReadDB(1);
-            //dtDim = dtDim.AsEnumerable().Distinct().CopyToDataTable();
+            //DataTable dtDimHeight = dtDim.AsEnumerable().Distinct().CopyToDataTable();
             view = new DataView(dtDim);
             view.Sort = "Height ASC";
             DataTable distinctDTHeight = view.ToTable(true, "Height");
             dtDim = DataBase.ReadDB(2);
+            //DataTable dtDimWidth = dtDim.AsEnumerable().Distinct().CopyToDataTable();
             view = new DataView(dtDim);
             view.Sort = "Width ASC";
             DataTable distinctDTWidth = view.ToTable(true, "Width");
             dtDim = DataBase.ReadDB(3);
+            //DataTable dtDimDepth = dtDim.AsEnumerable().Distinct().CopyToDataTable();
             view = new DataView(dtDim);
             view.Sort = "Depth ASC";
             DataTable distinctDTDepth = view.ToTable(true, "Depth");
             dtDim = DataBase.ReadDB(4);
+            //DataTable dtDimBoxColor = dtDim.AsEnumerable().Distinct().CopyToDataTable();
             view = new DataView(dtDim);
             view.Sort = "Color ASC";
-            DataTable distinctDTBoxColor = view.ToTable(true, "Color") ;
+            DataTable distinctDTBoxColor = view.ToTable(true, "Color");
             dtDim = DataBase.ReadDB(5);
+            //DataTable dtDimDoorColor = dtDim.AsEnumerable().Distinct().CopyToDataTable();
             view = new DataView(dtDim);
             view.Sort = "Color ASC";
             DataTable distinctDTDoorColor = view.ToTable(true, "Color");
@@ -179,16 +183,18 @@ namespace KitBoxGroup6
             label5.Visible = false;
             comboBox2.Visible = false;
             comboBox4.Visible = false;
-            string color = comboBox3.SelectedText;
-            string height = comboBox1.SelectedItem.ToString();
-            string width = comboBox2.SelectedItem.ToString();
-            string depth = comboBox4.SelectedItem.ToString();
-            string[] dimension = { height, width, depth };
+
+            string boxColor = (comboBox3.SelectedItem as DataRowView)["Color"].ToString();
+            string doorColor = (comboBox6.SelectedItem as DataRowView)["Color"].ToString();
+            double height = Convert.ToDouble((comboBox1.SelectedItem as DataRowView)["Height"]);
+            double width = Convert.ToDouble((comboBox2.SelectedItem as DataRowView)["Width"]);
+            double depth = Convert.ToDouble((comboBox4.SelectedItem as DataRowView)["Depth"]);
+            double[] dimension = { height, width, depth };
             bool doors = checkBox1.Checked;
             string cups = "Yes";
-            //boxHeight += height;
+            boxHeight += height;
 
-            if (doors == false || comboBox6.SelectedItem == "Verre")
+            if (doors == false || doorColor == "Verre")
             {
                 cups = "None";
             }
@@ -197,28 +203,28 @@ namespace KitBoxGroup6
             tableLayoutPanel1.Visible = true;
             label10.Visible = true;
             textBox1.Text = boxHeight.ToString();
-            textBox2.Text = comboBox1.SelectedItem.ToString();
-            textBox3.Text = comboBox2.SelectedItem.ToString();
+            textBox2.Text = width.ToString();
+            textBox3.Text = depth.ToString();
 
             DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
             row.Cells[0].Value = A;
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                row.Cells[1].Value = comboBox6.SelectedItem;
+                row.Cells[1].Value = doorColor;
             }
             else
             {
                 row.Cells[1].Value = "None";
             }
             row.Cells[2].Value = cups;
-            row.Cells[3].Value = comboBox3.SelectedItem;
-            row.Cells[4].Value = comboBox1.SelectedItem;
+            row.Cells[3].Value = boxColor;
+            row.Cells[4].Value = height;
             dataGridView1.Rows.Add(row);
 
             Inventory inventory = new Inventory(new List<Part>());
-            //Locker Locker = new Locker(dimension, color, inventory);
+            Locker Locker = new Locker(dimension, boxColor, inventory);
 
-            A = A + 1;
+            A++;
 
             if (A > 7)
             {
