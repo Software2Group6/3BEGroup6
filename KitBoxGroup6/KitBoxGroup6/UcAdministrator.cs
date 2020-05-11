@@ -8,33 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace USERTEST
+namespace KitBoxGroup6
 {
-    public partial class UserControl3 : UserControl
+    public partial class UcAdministrator : UserControl
     {
-        public UserControl3()
+        public UcAdministrator()
         {
             InitializeComponent();
-        }
-
-        private void UserControl3_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox4.Text == "Storekeeper" && textBox5.Text == "Kimmy90")
             {
-                panel1.Visible = true;
+                
             }
 
             else if (textBox4.Text == "Secretary" && textBox5.Text == "Bambou79")
             {
-                panel1.Visible = true;
+                panel6.Visible = false;
             }
 
-            else if (textBox4.Text == "")
+            else if (textBox4.Text == "" )
             {
                 MessageBox.Show("Login cannot be empty");
             }
@@ -49,6 +44,10 @@ namespace USERTEST
                 MessageBox.Show("Incorrect login or password ");
             }
         }
-    
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

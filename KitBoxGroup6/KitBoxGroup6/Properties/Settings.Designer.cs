@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace USERTEST.Properties
+namespace KitBoxGroup6.Properties
 {
 
 
