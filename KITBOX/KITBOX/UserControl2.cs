@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
-namespace KitBoxGroup6
+namespace USERTEST
 {
-    public partial class UcDisplayRecap : UserControl
+    public partial class UserControl2 : UserControl
     {
-        public UcDisplayRecap()
+        public UserControl2()
         {
             InitializeComponent();
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
