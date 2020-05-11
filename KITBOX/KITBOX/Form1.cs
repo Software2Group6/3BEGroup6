@@ -9,36 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
-namespace KitBoxGroup6
+namespace USERTEST
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
-            InitializeComponent();          
+            InitializeComponent();
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             userControl11.Visible = true;
-            Box kitBox = new Box(new List<Locker>());            
-
+            
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void userControl21_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            userControl31.Visible = true;
 
         }
 
@@ -47,14 +36,14 @@ namespace KitBoxGroup6
 
         }
 
-        private void adminPanel1_Load(object sender, EventArgs e)  
+        private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void userControl31_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            userControl31.Visible = true;
         }
     }
 }
