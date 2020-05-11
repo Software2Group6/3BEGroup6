@@ -8,21 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-public class Locker
+public class Box
 {
 	private double[] dimensions;
 	private int num;
 	private string color;
+	private string cups;
 	private Inventory inventory;
-	private bool doors;
+	private string doorColor;
 
-	public Locker(int num, bool doors, double[] dimensions, string color, Inventory inventory)
+	public Box(int num, string doorColor, double[] dimensions, string color, Inventory inventory, string cups)
 	{
 		this.dimensions = dimensions;
 		this.num = num;
 		this.color = color;
+		this.cups = cups;
 		this.inventory = inventory;
-		this.doors = doors;
+		this.doorColor = doorColor;
 	}
 
 	public int getNum()
@@ -40,9 +42,9 @@ public class Locker
 		return color;
 	}
 
-	public bool getDoor()
+	public string getDoorColor()
 	{
-		return doors;
+		return doorColor;
 	}
 
 }
