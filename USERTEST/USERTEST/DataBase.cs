@@ -38,6 +38,9 @@ namespace USERTEST
                     case 5:
                         queryString = "SELECT Color FROM Parts WHERE Ref='Porte' ";
                         break;
+                    case 6:
+                        queryString = "SELECT Color FROM Parts WHERE Ref='Cornières' ";
+                        break;
                     default:
                         queryString = null;
                         break;

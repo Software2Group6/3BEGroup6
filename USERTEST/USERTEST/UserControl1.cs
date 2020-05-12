@@ -46,6 +46,11 @@ namespace USERTEST
             view = new DataView(dtDim);
             view.Sort = "Color ASC";
             DataTable distinctDTDoorColor = view.ToTable(true, "Color");
+            dtDim = DataBase.ReadDB(6);
+            //DataTable dtDimDoorColor = dtDim.AsEnumerable().Distinct().CopyToDataTable();
+            view = new DataView(dtDim);
+            view.Sort = "Color ASC";
+            DataTable distinctDTCorColor = view.ToTable(true, "Color");
 
             comboBox1.DisplayMember = "Height";
             comboBox1.ValueMember = "Height";
@@ -62,6 +67,9 @@ namespace USERTEST
             comboBox6.DisplayMember = "Color";
             comboBox6.ValueMember = "Color";
             comboBox6.DataSource = distinctDTDoorColor;
+            comboBox5.DisplayMember = "Color";
+            comboBox5.ValueMember = "Color";
+            comboBox5.DataSource = distinctDTCorColor;
 
         }
 
