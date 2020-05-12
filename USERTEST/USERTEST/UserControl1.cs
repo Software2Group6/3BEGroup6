@@ -46,6 +46,11 @@ namespace USERTEST
             view = new DataView(dtDim);
             view.Sort = "Color ASC";
             DataTable distinctDTDoorColor = view.ToTable(true, "Color");
+            dtDim = DataBase.ReadDB(6);
+            //DataTable dtDimDoorColor = dtDim.AsEnumerable().Distinct().CopyToDataTable();
+            view = new DataView(dtDim);
+            view.Sort = "Color ASC";
+            DataTable distinctDTCorColor = view.ToTable(true, "Color");
 
             comboBox1.DisplayMember = "Height";
             comboBox1.ValueMember = "Height";
@@ -62,6 +67,9 @@ namespace USERTEST
             comboBox6.DisplayMember = "Color";
             comboBox6.ValueMember = "Color";
             comboBox6.DataSource = distinctDTDoorColor;
+            comboBox5.DisplayMember = "Color";
+            comboBox5.ValueMember = "Color";
+            comboBox5.DataSource = distinctDTCorColor;
 
         }
 
@@ -274,7 +282,7 @@ namespace USERTEST
             string doorcolor = "( '" + string.Join("', '", doorcolors) + "' )";
             OleDbConnection connection;
             connection = new OleDbConnection();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\abbas\Documents\GitHub\3BEGroup6\Kitbox.accdb;Persist Security Info=False;";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.16.0;Data Source=..\..\..\..\Kitbox.accdb;Persist Security Info=False;";
             connection.Open();
             string queryString = "SELECT ID, Ref, Code, Height, Depth, Width, Color, InStock, Client_Price " +
                             "FROM Parts WHERE Height IN " + aa + " AND  Ref='Tasseau' ";            
