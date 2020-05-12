@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{676D381E-8549-4ECC-8764-5E242E399AC7}</ProjectGuid>
+    <ProjectGuid>{3456E755-7A3E-4557-8526-8AB08BC8DF40}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>KitBoxGroup6</RootNamespace>
-    <AssemblyName>KitBoxGroup6</AssemblyName>
+    <RootNamespace>USERTEST</RootNamespace>
+    <AssemblyName>USERTEST</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -55,11 +55,29 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs" />
-    <Compile Include="Locker.cs" />
+    <Compile Include="kitBox.cs" />
     <Compile Include="Part.cs" />
-    <Compile Include="PrefPart.cs" />
+    <Compile Include="prefPart.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl3.Designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +90,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl3.resx">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
