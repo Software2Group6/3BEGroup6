@@ -71,6 +71,8 @@ namespace USERTEST
             comboBox5.ValueMember = "Color";
             comboBox5.DataSource = distinctDTCorColor;
 
+            string angleColor =comboBox5.SelectedText;
+
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -98,6 +100,7 @@ namespace USERTEST
         kitBox kitBox = new kitBox(new List<Box>());
         double width, depth;
         string boxColor;
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -111,49 +114,58 @@ namespace USERTEST
             string cups = "Yes";
             boxHeight += height;
 
-            if (doors == false || doorColor == "Verre")
+            if (boxHeight > 392)
             {
-                cups = "None";
-            }
+                MessageBox.Show("You have exceeded the maximum KitBox height capability ! Choice a smaller height or make a new configuration ");
 
-            dataGridView1.Visible = true;
-
-            tableLayoutPanel1.Visible = true;
-            label10.Visible = true;
-            textBox1.Text = boxHeight.ToString();
-            textBox2.Text = width.ToString();
-            textBox3.Text = depth.ToString();
-            textBox4.Text = A.ToString();
-
-            DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-            row.Cells[0].Value = A;
-            if (checkBox1.CheckState == CheckState.Checked)
-            {
-                row.Cells[1].Value = doorColor;
-                label6.Visible = true;
-                comboBox6.Visible = true;
             }
             else
             {
-                row.Cells[1].Value = "None";
-                doorColor = "None";
-                label6.Visible = false;
-                comboBox6.Visible = false;
-            }
-            row.Cells[2].Value = cups;
-            row.Cells[3].Value = boxColor;
-            row.Cells[4].Value = height;
-            dataGridView1.Rows.Add(row);
 
-            Inventory inventory = new Inventory(new List<Part>());            
-            kitBox.Add(new Box(A, doorColor, dimension, boxColor, inventory, cups));
+                if (doors == false || doorColor == "Verre")
+                {
+                    cups = "None";
+                }
+
+                dataGridView1.Visible = true;
+
+                tableLayoutPanel1.Visible = true;
+                label10.Visible = true;
+                textBox1.Text = boxHeight.ToString();
+                textBox2.Text = width.ToString();
+                textBox3.Text = depth.ToString();
+                textBox4.Text = A.ToString();
+
+                DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+                row.Cells[0].Value = A;
+                if (checkBox1.CheckState == CheckState.Checked)
+                {
+                    row.Cells[1].Value = doorColor;
+                    label6.Visible = true;
+                    comboBox6.Visible = true;
+                }
+                else
+                {
+                    row.Cells[1].Value = "None";
+                    doorColor = "None";
+                    label6.Visible = false;
+                    comboBox6.Visible = false;
+                }
+                row.Cells[2].Value = cups;
+                row.Cells[3].Value = boxColor;
+                row.Cells[4].Value = height;
+                dataGridView1.Rows.Add(row);
+
+                Inventory inventory = new Inventory(new List<Part>());
+                kitBox.Add(new Box(A, doorColor, dimension, boxColor, inventory, cups));
 
 
-            A++;
+                A++;
 
-            if (A > 7)
-            {
-                button4.Visible = false;
+                if (A > 7)
+                {
+                    button4.Visible = false;
+                }
             }
 
         }
@@ -265,6 +277,9 @@ namespace USERTEST
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            //MessageBox.Show("Are you sure ?");
+            
+           
 
         }
 
@@ -347,6 +362,29 @@ namespace USERTEST
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;           
+            dataGridView1.Rows.RemoveAt(rowIndex);           
+            for (int i = rowIndex; rowIndex < A-1 && i < A-2; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = i+1;          
+            }
+            A--;
+            button4.Visible = true;
+            textBox4.Text = A.ToString();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

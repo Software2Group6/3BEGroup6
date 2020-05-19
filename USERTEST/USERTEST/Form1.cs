@@ -22,7 +22,7 @@ namespace USERTEST
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userControl11.Visible = true;
+            //userControl11.Visible = true;
             
         }
 
@@ -43,7 +43,7 @@ namespace USERTEST
 
         private void button3_Click(object sender, EventArgs e)
         {
-            userControl31.Visible = true;
+            //userControl31.Visible = true;
         }
     }
 }
