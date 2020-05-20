@@ -34,6 +34,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.userControl11 = new USERTEST.UserControl1();
+            this.userControl31 = new USERTEST.UserControl3();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             this.button3.BackColor = System.Drawing.Color.Silver;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(1544, 747);
+            this.button3.Location = new System.Drawing.Point(1272, 644);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(266, 57);
@@ -86,18 +88,35 @@
             // 
             // button1
             // 
-            this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(833, 322);
+            this.button1.Location = new System.Drawing.Point(800, 448);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(312, 135);
+            this.button1.Size = new System.Drawing.Size(266, 135);
             this.button1.TabIndex = 22;
             this.button1.Text = "Build my KitBox";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // userControl11
+            // 
+            this.userControl11.BackColor = System.Drawing.Color.Khaki;
+            this.userControl11.Location = new System.Drawing.Point(271, 13);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(1507, 782);
+            this.userControl11.TabIndex = 25;
+            this.userControl11.Visible = false;
+            // 
+            // userControl31
+            // 
+            this.userControl31.BackColor = System.Drawing.Color.Khaki;
+            this.userControl31.Location = new System.Drawing.Point(55, 3);
+            this.userControl31.Name = "userControl31";
+            this.userControl31.Size = new System.Drawing.Size(1746, 814);
+            this.userControl31.TabIndex = 26;
+            this.userControl31.Visible = false;
             // 
             // Form1
             // 
@@ -105,6 +124,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1848, 829);
+            this.Controls.Add(this.userControl31);
+            this.Controls.Add(this.userControl11);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
@@ -115,7 +136,6 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -126,6 +146,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private UserControl1 userControl11;
+        private UserControl3 userControl31;
     }
 }
 
