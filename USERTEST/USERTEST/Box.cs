@@ -47,4 +47,8 @@ public class Box
 		return doorColor;
 	}
 
+	public string getCup()
+	{
+		return cups;
+	}
 }

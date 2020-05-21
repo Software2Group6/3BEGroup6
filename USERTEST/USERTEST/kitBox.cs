@@ -56,4 +56,24 @@ public class kitBox
 		}
 		return allColors;
 	}
+
+	public List<string> getAllCups()
+	{
+		List<string> allCups = new List<string>();
+		for (int i = 0; i < boxList.Count; i++)
+		{
+			allCups.Add(boxList[i].getCup());
+		}
+		return allCups;
+	}
+
+	public void Clear()
+	{
+		boxList.Clear();
+	}
+
+	public void RemoveAt(int a)
+	{
+		boxList.RemoveAt(a);
+	}
 }
